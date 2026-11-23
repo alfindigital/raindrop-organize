@@ -4,6 +4,10 @@ An agent skill plus a zero-dependency CLI that keeps a [Raindrop.io](https://rai
 Your AI agent (Claude Code, Codex, ...) decides where each bookmark belongs; the CLI does the safe parts:
 reading, checking, writing one bookmark at a time, reading it back, and undoing.
 
+![raindrop-organize demo: audit finds 3 Unsorted and a duplicate; context shows folders with example titles; apply dry-runs, then applies after approval; deadlinks reports dead and down links without deleting](assets/demo.gif)
+
+<sub>Real CLI output (trimmed) against a 15-bookmark demo library; the dead-link check hit the real network.</sub>
+
 - **audit**: Unsorted count, bookmarks sitting loose in a parent folder, tags outside your vocabulary or over the limit, the same URL saved twice (tracking params and `www` ignored, `#/routes` kept apart), empty folders. Read-only.
 - **context**: every folder that can take bookmarks, **with the titles already in it**, plus your rules and the Unsorted items. Folder names alone are ambiguous; showing what already lives in each folder is what makes the agent file things the way *you* do.
 - **apply**: a manifest of moves is validated against the live library and shown as a dry run. It only writes with `"review": "APPROVED"` and `--yes`, then reads every bookmark back and journals before/after.
