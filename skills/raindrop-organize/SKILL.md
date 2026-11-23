@@ -44,9 +44,10 @@ Add `--json` for machine-readable output.
 4. Write the manifest:
    ```json
    { "review": "PENDING",
-     "moves": [ { "id": 123, "to": 456, "addTags": ["free"], "reason": "short why" } ] }
+     "moves": [ { "id": 123, "from": -1, "to": 456, "addTags": ["free"], "reason": "short why" } ] }
    ```
-   Optional per move: `"from": <collection id>` (refuse if it moved meanwhile), `"removeTags": [...]`.
+   `from` is where the bookmark is now (`-1` = Unsorted; `0` is NOT Unsorted); the move is refused if it
+   moved meanwhile. Optional: `"removeTags": [...]`.
 5. `apply manifest.json` (dry run). Fix every refusal it reports. Show the plan to the human as a table:
    bookmark, from, to, tags.
 6. Only after the human agrees: set `"review": "APPROVED"`, run `apply manifest.json --yes`.

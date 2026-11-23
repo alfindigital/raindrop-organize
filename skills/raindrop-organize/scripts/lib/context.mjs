@@ -55,7 +55,8 @@ export function formatContext(ctx) {
   out.push('', `## Unsorted (${ctx.unsorted.length})`);
   for (const u of ctx.unsorted) out.push(JSON.stringify(u));
   out.push('', '## Manifest to write (then: apply --dry-run, show the human, set "review": "APPROVED", apply)');
-  out.push(JSON.stringify({ review: 'PENDING', moves: ctx.unsorted.slice(0, 1).map((u) => ({ id: u.id, to: '<folder id>', addTags: [], reason: '<short why>' })) }, null, 2));
+  out.push('("from": -1 means "still in Unsorted"; the move is refused if the bookmark was moved meanwhile.)');
+  out.push(JSON.stringify({ review: 'PENDING', moves: ctx.unsorted.slice(0, 1).map((u) => ({ id: u.id, from: -1, to: '<folder id>', addTags: [], reason: '<short why>' })) }, null, 2));
   return out.join('\n');
 }
 

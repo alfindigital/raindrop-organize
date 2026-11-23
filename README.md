@@ -62,7 +62,7 @@ Put a `raindrop-organize.json` in the working directory or `~/.config/` (start f
 {
   "review": "PENDING",
   "moves": [
-    { "id": 812345678, "to": 4567890, "addTags": ["open-source"], "reason": "agent sandbox tool" }
+    { "id": 812345678, "from": -1, "to": 4567890, "addTags": ["open-source"], "reason": "agent sandbox tool" }
   ]
 }
 ```
@@ -77,6 +77,10 @@ Unit tests run against an in-memory library (`npm test`, CI on Linux/Windows/mac
 (same page saved with and without `fbclid`); its first version also flagged two Google Analytics
 properties as duplicates, which is why `#/route` fragments are now kept. `apply` dry runs and refusals were
 checked live; writes, read-back and rollback are covered by the tests.
+
+A headless Claude Code agent (Sonnet) given only this skill and "organize my Raindrop, stop at the dry run" ran
+`audit` and `context`, wrote a manifest, got it refused once (it had written `"from": 0` for Unsorted; the
+stale-manifest check caught it), fixed it, showed the dry-run plan, and wrote nothing. 9 turns.
 
 Extracted from the rules and lessons behind one person's daily Raindrop cleanup (including an 853-link
 dead-link audit that taught what *not* to delete).
