@@ -1,0 +1,7 @@
+node_modules/
+*.log
+journal-*.jsonl
+raindrop-organize.json
+.env
+.DS_Store
+Thumbs.db

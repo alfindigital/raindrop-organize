@@ -1,0 +1,11 @@
+{
+  "name": "raindrop-organize",
+  "version": "0.1.0",
+  "description": "Agent skill + zero-dependency CLI to keep a Raindrop.io bookmark library tidy: audit, triage Unsorted with review, rollback, safe dead-link check.",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": { "test": "node --test" },
+  "keywords": ["raindrop", "raindrop.io", "bookmarks", "agent-skill", "claude-code", "codex", "cli"]
+}

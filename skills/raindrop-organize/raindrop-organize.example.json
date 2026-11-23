@@ -1,0 +1,18 @@
+{
+  "tags": ["ai", "api", "browser-extension", "community", "course", "desktop-app", "free", "freemium", "mobile-app", "offline", "open-source", "paid", "reference", "self-hosted"],
+  "priceTags": ["free", "freemium", "paid"],
+  "maxTags": 3,
+  "rootMustBeEmpty": true,
+  "skipCollections": [],
+  "blockHosts": [],
+  "examplesPerFolder": 6,
+  "rules": [
+    "Agents, LLM APIs, prompts, MCP servers and agent skills go to the AI folder. A design, video or marketing tool that happens to use AI goes with its function (an AI video editor goes to Video).",
+    "Frameworks, general APIs, scraping and coding guides go to Software Development. UI component libraries and design systems go to Design.",
+    "Payments, invoices and payment gateways go to Business / Payments, including discussion posts about integrating payments.",
+    "OTP, temporary numbers or email, password managers and 2FA go to Business / Identity & Security.",
+    "Server dashboards, uptime monitors and self-hosted admin panels go to Infrastructure / Monitoring.",
+    "Different pages on the same site (two analytics properties, two docs pages) are separate bookmarks, not duplicates.",
+    "'reference' means mainly something to read (a post, a doc, a guide). It is not a catch-all tag."
+  ]
+}
